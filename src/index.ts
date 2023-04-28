@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+
 export interface IError {
   success: boolean;
   message: string;
@@ -36,26 +37,26 @@ export class Logger {
     this.output.show();
   }
 
-  public error(message: string, data: Error | IError) {
+  public error(message: string, data?: Error | IError) {
     this.logLevel('Error', message, data);
   }
 
-  public info(message: string, data: Error | IError) {
+  public info(message: string, data?: Error | IError) {
     this.logLevel('Info', message, data);
   }
 
-  public warn(message: string, data: Error | IError) {
+  public warn(message: string, data?: Error | IError) {
     this.logLevel('Warn', message, data);
   }
 
-  public log(message: string, data: Error | IError) {
+  public log(message: string, data?: Error | IError) {
     this.logLevel(this.level, message, data);
   }
 
-  public logLevel(level: string, message: string, data: Error | IError) {
+  public logLevel(level: string, message: string, data?: Error | IError) {
     this.output.appendLine(`[${level} - ${this.now()}] ${message}`);
     if (data) {
-        this.output.appendLine(this.data2String(data));
+      this.output.appendLine(this.data2String(data));
     }
   }
 }
