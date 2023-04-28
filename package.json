@@ -1,0 +1,25 @@
+{
+  "name": "@opensumi/extension-logger",
+  "version": "1.0.0",
+  "description": "A logger for OpenSumi extension to log message",
+  "author": "opensumi <service@opensumi.com>",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "rm -rf lib && tsc -p tsconfig.prod.json"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "test"
+  },
+  "keywords": [
+    "Logger"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "typescript": "^4.8.4"
+  }
+}
